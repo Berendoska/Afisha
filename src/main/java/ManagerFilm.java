@@ -28,12 +28,12 @@ public class ManagerFilm {
 
     public String[] showLast() {
         int sizeLength;
-        if (limit <= films.length) {
-            sizeLength = limit;
-        }else  {
+        if (limit > films.length) {
             sizeLength = films.length;
+        }else  {
+            sizeLength = limit;
         }
-        String[] tmp = new String[limit];
+        String[] tmp = new String[sizeLength];
         for (int i = 0; i < tmp.length; i++) {
             tmp[i] = films[films.length - 1 - i];
 
